@@ -121,7 +121,7 @@ class _WebViewState extends State<WebView> {
     } else {
       return Container(
         color: backgroundColor,
-        padding: EdgeInsets.only(top: 35, bottom: 10),
+        padding: EdgeInsets.only(top: 30, bottom: 10),
         child: FractionallySizedBox(
           widthFactor: 1,
           child: Stack(
