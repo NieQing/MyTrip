@@ -39,9 +39,9 @@ class _TabNavigatorState extends State<TabNavigator> {
           });
         },
         items: [
-          _bottomNavigationBarItem('首页', Icons.home, 0),
-          _bottomNavigationBarItem('搜索', Icons.search, 1),
-          _bottomNavigationBarItem('旅拍', Icons.camera, 2),
+          _bottomNavigationBarItem('首页', Icons.home,           0),
+          _bottomNavigationBarItem('搜索', Icons.search,         1),
+          _bottomNavigationBarItem('旅拍', Icons.camera,         2),
           _bottomNavigationBarItem('我的', Icons.account_circle, 3),
         ],
       ),

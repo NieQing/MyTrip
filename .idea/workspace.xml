@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f9bca4e6-666f-4bff-b7ce-86c5aab5c47f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/navigator/tab_navigator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigator/tab_navigator.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -101,13 +96,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="13592" />
+          <entry key="dart" value="13652" />
+          <entry key="txt" value="26" />
           <entry key="yaml" value="122" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="13592" />
+          <entry key="Dart" value="13652" />
+          <entry key="PLAIN_TEXT" value="26" />
           <entry key="YAML" value="122" />
         </counts>
       </usages-collector>
@@ -130,8 +127,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/navigator/tab_navigator.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="100" column="12" selection-start-line="41" selection-start-column="10" selection-end-line="100" selection-end-column="12" />
+            <state relative-caret-position="135">
+              <caret line="40" column="16" lean-forward="true" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -276,6 +273,14 @@
       <option name="presentableId" value="Default" />
       <updated>1554256296538</updated>
     </task>
+    <task id="LOCAL-00001" summary="更新：优化底部导航控件代码">
+      <created>1555325107066</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555325107066</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -291,7 +296,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49785408" visible="true" weight="0.25201073" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49785408" visible="true" weight="0.25201073" />
       <window_info id="Captures" order="1" sideWeight="0.50214595" side_tool="true" weight="0.36049724" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.32918397" />
       <window_info id="Image Layers" order="3" />
@@ -300,13 +305,13 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32711622" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49861878" weight="0.26217765" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49798927" weight="0.2609929" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3295129" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" weight="0.3295129" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.5415473" />
       <window_info anchor="bottom" id="Terminal" order="6" weight="0.32855093" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5013812" side_tool="true" weight="0.26217765" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5020107" side_tool="true" weight="0.2609929" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32998565" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.20425531" />
@@ -347,6 +352,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更新：优化底部导航控件代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新：优化底部导航控件代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -583,8 +592,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/navigator/tab_navigator.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="100" column="12" selection-start-line="41" selection-start-column="10" selection-end-line="100" selection-end-column="12" />
+        <state relative-caret-position="135">
+          <caret line="40" column="16" lean-forward="true" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
         </state>
       </provider>
     </entry>
