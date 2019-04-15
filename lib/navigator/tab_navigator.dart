@@ -39,67 +39,29 @@ class _TabNavigatorState extends State<TabNavigator> {
           });
         },
         items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: _defaultColor,
-            ),
-            activeIcon: Icon(
-              Icons.home,
-              color: _activeColor,
-            ),
-            title: Text(
-              '首页',
-              style: TextStyle(
-                  color: _currentIndex == 0 ? _activeColor : _defaultColor),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: _defaultColor,
-            ),
-            activeIcon: Icon(
-              Icons.search,
-              color: _activeColor,
-            ),
-            title: Text(
-              '搜索',
-              style: TextStyle(
-                  color: _currentIndex == 1 ? _activeColor : _defaultColor),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.camera,
-              color: _defaultColor,
-            ),
-            activeIcon: Icon(
-              Icons.camera,
-              color: _activeColor,
-            ),
-            title: Text(
-              '旅拍',
-              style: TextStyle(
-                  color: _currentIndex == 2 ? _activeColor : _defaultColor),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle,
-              color: _defaultColor,
-            ),
-            activeIcon: Icon(
-              Icons.account_circle,
-              color: _activeColor,
-            ),
-            title: Text(
-              '我的',
-              style: TextStyle(
-                  color: _currentIndex == 3 ? _activeColor : _defaultColor),
-            ),
-          ),
+          _bottomNavigationBarItem('首页', Icons.home, 0),
+          _bottomNavigationBarItem('搜索', Icons.search, 1),
+          _bottomNavigationBarItem('旅拍', Icons.camera, 2),
+          _bottomNavigationBarItem('我的', Icons.account_circle, 3),
         ],
+      ),
+    );
+  }
+
+  _bottomNavigationBarItem(String name, IconData iconData, int index) {
+    return BottomNavigationBarItem(
+      icon: Icon(
+        iconData,
+        color: _defaultColor,
+      ),
+      activeIcon: Icon(
+        iconData,
+        color: _activeColor,
+      ),
+      title: Text(
+        name,
+        style: TextStyle(
+            color: _currentIndex == index ? _activeColor : _defaultColor),
       ),
     );
   }
