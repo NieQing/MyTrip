@@ -6,7 +6,7 @@ import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 const CATCH_URLS = ['m.ctrip.com/', 'm.ctrip.com/html5/', 'm.ctrip.com/html5'];
 
 class WebView extends StatefulWidget {
-  final String url;
+  String url;
   final String statusBarColor;
   final String title;
   final bool hideAppBar;
@@ -17,14 +17,18 @@ class WebView extends StatefulWidget {
       this.statusBarColor,
       this.title,
       this.hideAppBar,
-      this.backForbid = false});
+      this.backForbid = false}) {
+    if (url != null && url.contains('ctrip.com')) {
+      url = url.replaceAll("http://", 'https://');
+    }
+  }
 
   @override
   _WebViewState createState() => _WebViewState();
 }
 
 class _WebViewState extends State<WebView> {
-  final webviewReference = FlutterWebviewPlugin();
+  final webViewReference = FlutterWebviewPlugin();
   StreamSubscription<String> _onUrlChanged;
   StreamSubscription<WebViewStateChanged> _onStateChanged;
   StreamSubscription<WebViewHttpError> _onHttpError;
@@ -44,15 +48,15 @@ class _WebViewState extends State<WebView> {
   @override
   void initState() {
     super.initState();
-    webviewReference.close();
-    _onUrlChanged = webviewReference.onUrlChanged.listen((String url) {});
+    webViewReference.close();
+    _onUrlChanged = webViewReference.onUrlChanged.listen((String url) {});
     _onStateChanged =
-        webviewReference.onStateChanged.listen((WebViewStateChanged state) {
+        webViewReference.onStateChanged.listen((WebViewStateChanged state) {
       switch (state.type) {
         case WebViewState.startLoad:
           if (_isToMain(state.url) && !exiting) {
             if (widget.backForbid) {
-              webviewReference.launch(widget.url);
+              webViewReference.launch(widget.url);
             } else {
               Navigator.pop(context);
               exiting = true;
@@ -64,7 +68,7 @@ class _WebViewState extends State<WebView> {
       }
     });
     _onHttpError =
-        webviewReference.onHttpError.listen((WebViewHttpError error) {
+        webViewReference.onHttpError.listen((WebViewHttpError error) {
       print(error);
     });
   }
@@ -74,7 +78,7 @@ class _WebViewState extends State<WebView> {
     _onUrlChanged.cancel();
     _onStateChanged.cancel();
     _onHttpError.cancel();
-    webviewReference.dispose();
+    webViewReference.dispose();
     super.dispose();
   }
 
@@ -95,6 +99,7 @@ class _WebViewState extends State<WebView> {
               Color(int.parse('0xff' + statusBarColorStr)), backButtonColor),
           Expanded(
             child: WebviewScaffold(
+              userAgent: 'null',
               url: widget.url,
               withZoom: true,
               withLocalStorage: true,
