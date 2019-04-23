@@ -101,6 +101,7 @@ class _TravelTabPageState extends State<TravelTabPage>
         child: RefreshIndicator(
             child: MediaQuery.removePadding(
                 context: context,
+                removeTop: true,
                 child: StaggeredGridView.countBuilder(
                   controller: _scrollController,
                   crossAxisCount: 4,
