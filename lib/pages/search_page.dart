@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_trip/dao/search_dao.dart';
 import 'package:my_trip/model/search_model.dart';
+import 'package:my_trip/util/navigator_util.dart';
 import 'package:my_trip/widget/search_bar.dart';
 import 'package:my_trip/widget/webview.dart';
 
@@ -119,13 +120,12 @@ class _SearchPageState extends State<SearchPage> {
     SearchItem item = searchModel.data[position];
     return GestureDetector(
       onTap: () {
-        Navigator.push(
+        NavigationUtil.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => WebView(
-                      url: item.url,
-                      title: '详情',
-                    )));
+            WebView(
+              url: item.url,
+              title: '详情',
+            ));
       },
       child: Container(
         padding: EdgeInsets.all(10),

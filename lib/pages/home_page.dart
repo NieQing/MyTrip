@@ -6,6 +6,7 @@ import 'package:my_trip/model/grid_nav_model.dart';
 import 'package:my_trip/model/home_model.dart';
 import 'package:my_trip/model/sales_box_model.dart';
 import 'package:my_trip/pages/search_page.dart';
+import 'package:my_trip/util/navigator_util.dart';
 import 'package:my_trip/widget/grid_nav.dart';
 import 'package:my_trip/widget/loading_container.dart';
 import 'package:my_trip/widget/local_nav.dart';
@@ -13,6 +14,7 @@ import 'package:my_trip/widget/sales_box.dart';
 import 'package:my_trip/widget/search_bar.dart';
 import 'package:my_trip/widget/sub_nav.dart';
 import 'package:my_trip/widget/webview.dart';
+import 'package:flutter_splash_screen/flutter_splash_screen.dart';
 
 const APPBAR_SCROLL_OFFSET = 100;
 const SEARCH_BAR_DEFAULT_TEXT = '网红打卡地 景点 酒店 美食';
@@ -70,6 +72,9 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _handleRefresh();
+    Future.delayed(Duration(seconds: 3), () {
+      FlutterSplashScreen.hide();
+    });
   }
 
   @override
@@ -141,12 +146,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   _jumpToSearch() {
-    Navigator.push(
+    NavigationUtil.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => SearchPage(
-              hint: SEARCH_BAR_DEFAULT_TEXT,
-            ),
+      SearchPage(
+        hint: SEARCH_BAR_DEFAULT_TEXT,
       ),
     );
   }
@@ -194,14 +197,14 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                CommonModel model = bannerList[index];
-                return WebView(
-                  url: model.url,
-                  title: model.title,
-                  hideAppBar: model.hideAppBar,
-                );
-              }));
+              CommonModel model = bannerList[index];
+              NavigationUtil.push(
+                  context,
+                  WebView(
+                    url: model.url,
+                    title: model.title,
+                    hideAppBar: model.hideAppBar,
+                  ));
             },
             child: Image.network(
               bannerList[index].icon,

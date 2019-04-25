@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_trip/model/common_model.dart';
 import 'package:my_trip/model/sales_box_model.dart';
+import 'package:my_trip/util/navigator_util.dart';
 import 'package:my_trip/widget/webview.dart';
 
 /// 底部卡片入口
@@ -54,12 +55,9 @@ class SalesBox extends StatelessWidget {
                         end: Alignment.centerRight)),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
+                    NavigationUtil.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            WebView(url: salesBox.moreUrl, title: '更多活动'),
-                      ),
+                      WebView(url: salesBox.moreUrl, title: '更多活动'),
                     );
                   },
                   child: Text(
@@ -103,14 +101,13 @@ class SalesBox extends StatelessWidget {
     BorderSide borderSide = BorderSide(width: 0.8, color: Color(0xfff2f2f2));
     return GestureDetector(
         onTap: () {
-          Navigator.push(
+          NavigationUtil.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => WebView(
-                        url: model.url,
-                        statusBarColor: model.statusBarColor,
-                        hideAppBar: model.hideAppBar,
-                      )));
+              WebView(
+                url: model.url,
+                statusBarColor: model.statusBarColor,
+                hideAppBar: model.hideAppBar,
+              ));
         },
         child: Container(
           decoration: BoxDecoration(
